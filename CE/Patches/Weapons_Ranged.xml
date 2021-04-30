@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+
+                <!--===== TOOLS FOR THE TOOL GOD =====-->
+                <li Class="PatchOperationReplace">
+                    <xpath>
+				    /Defs/ThingDef[
+					defName = "HRK_HoneyBadger" or
+					defName = "HRK_HoneyBadger_C" or											
+					defName = "HRK_HoneyBadger_S"]/tools
+                    </xpath>
+                    <value>
+                        <tools>
+                            <li Class="CombatExtended.ToolCE">
+                                <label>stock</label>
+                                <capacities>
+                                    <li>Blunt</li>
+                                </capacities>
+                                <power>8</power>
+                                <cooldownTime>1.55</cooldownTime>
+                                <chanceFactor>1.5</chanceFactor>
+                                <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+                                <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+                            </li>
+                            <li Class="CombatExtended.ToolCE">
+                                <label>barrel</label>
+                                <capacities>
+                                    <li>Blunt</li>
+                                </capacities>
+                                <power>5</power>
+                                <cooldownTime>2.02</cooldownTime>
+                                <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+                                <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+                            </li>
+                            <li Class="CombatExtended.ToolCE">
+                                <label>muzzle</label>
+                                <capacities>
+                                    <li>Poke</li>
+                                </capacities>
+                                <power>8</power>
+                                <cooldownTime>1.55</cooldownTime>
+                                <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+                                <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+                            </li>
+                        </tools>
+                    </value>
+                </li>
+
+                <!--===== HRK_HoneyBadger =====-->
+                <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                    <defName>HRK_HoneyBadger</defName>
+                    <statBases>
+                        <WorkToMake>30500</WorkToMake>
+                        <SightsEfficiency>1</SightsEfficiency>
+                        <ShotSpread>0.16</ShotSpread>
+                        <SwayFactor>1.03</SwayFactor>
+                        <Bulk>6.10</Bulk>
+                        <Mass>2.95</Mass>
+                        <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+                    </statBases>
+                    <costList>
+                        <Steel>40</Steel>
+                        <ComponentIndustrial>5</ComponentIndustrial>
+                        <Chemfuel>5</Chemfuel>
+                    </costList>
+                    <Properties>
+                        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                        <hasStandardCommand>True</hasStandardCommand>
+                        <defaultProjectile>Bullet_300AACBlackout_FMJ</defaultProjectile>
+                        <burstShotCount>6</burstShotCount>
+                        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+                        <warmupTime>1.1</warmupTime>
+                        <range>48</range>
+                        <soundCast>HRK_Shot_HoneyBadger</soundCast>
+                        <soundCastTail>GunTail_Medium</soundCastTail>
+                        <muzzleFlashScale>9</muzzleFlashScale>
+                        <recoilAmount>1.28</recoilAmount>
+                    </Properties>
+                    <AmmoUser>
+                        <magazineSize>30</magazineSize>
+                        <reloadTime>4</reloadTime>
+                        <ammoSet>AmmoSet_300AACBlackout</ammoSet>
+                    </AmmoUser>
+                    <FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+                        <aiUseBurstMode>True</aiUseBurstMode>
+                        <aimedBurstShotCount>3</aimedBurstShotCount>
+                    </FireModes>
+                    <weaponTags>
+                        <li>CE_AI_Rifle</li>
+                        <li>CE_AI_AssaultWeapon</li>
+                    </weaponTags>
+                </li>
+
+                <!--===== HRK_HoneyBadger_C =====-->
+                <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                    <defName>HRK_HoneyBadger_C</defName>
+                    <statBases>
+                        <WorkToMake>32000</WorkToMake>
+                        <SightsEfficiency>1.1</SightsEfficiency>
+                        <ShotSpread>0.16</ShotSpread>
+                        <SwayFactor>1.03</SwayFactor>
+                        <Bulk>6.10</Bulk>
+                        <Mass>2.95</Mass>
+                        <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+                    </statBases>
+                    <costList>
+                        <Steel>45</Steel>
+                        <ComponentIndustrial>6</ComponentIndustrial>
+                        <Chemfuel>10</Chemfuel>
+                    </costList>
+                    <Properties>
+                        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                        <hasStandardCommand>True</hasStandardCommand>
+                        <defaultProjectile>Bullet_300AACBlackout_FMJ</defaultProjectile>
+                        <burstShotCount>6</burstShotCount>
+                        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+                        <warmupTime>1</warmupTime>
+                        <range>48</range>
+                        <soundCast>HRK_Shot_HoneyBadger</soundCast>
+                        <soundCastTail>GunTail_Light</soundCastTail>
+                        <muzzleFlashScale>9</muzzleFlashScale>
+                        <recoilAmount>1.18</recoilAmount>
+                    </Properties>
+                    <AmmoUser>
+                        <magazineSize>30</magazineSize>
+                        <reloadTime>4</reloadTime>
+                        <ammoSet>AmmoSet_300AACBlackout</ammoSet>
+                    </AmmoUser>
+                    <FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+                        <aiUseBurstMode>True</aiUseBurstMode>
+                        <aimedBurstShotCount>3</aimedBurstShotCount>
+                    </FireModes>
+                    <weaponTags>
+                        <li>CE_AI_Rifle</li>
+                        <li>CE_AI_AssaultWeapon</li>
+                    </weaponTags>
+                </li>
+
+                <!--===== HRK_HoneyBadger_S =====-->
+                <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                    <defName>HRK_HoneyBadger_S</defName>
+                    <statBases>
+                        <WorkToMake>52000</WorkToMake>
+                        <SightsEfficiency>2.18</SightsEfficiency>
+                        <ShotSpread>0.16</ShotSpread>
+                        <SwayFactor>1.06</SwayFactor>
+                        <Bulk>7.10</Bulk>
+                        <Mass>2.95</Mass>
+                        <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+                    </statBases>
+                    <costList>
+                        <Steel>45</Steel>
+                        <Plasteel>25</Plasteel>
+                        <ComponentIndustrial>10</ComponentIndustrial>
+                        <Chemfuel>10</Chemfuel>
+                    </costList>
+                    <Properties>
+                        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                        <hasStandardCommand>True</hasStandardCommand>
+                        <defaultProjectile>Bullet_762x35mmCharged</defaultProjectile>
+                        <burstShotCount>6</burstShotCount>
+                        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+                        <warmupTime>1.25</warmupTime>
+                        <range>48</range>
+                        <soundCast>Shot_ChargeRifle</soundCast>
+                        <soundCastTail>GunTail_Medium</soundCastTail>
+                        <muzzleFlashScale>9</muzzleFlashScale>
+                        <recoilAmount>1.18</recoilAmount>
+                    </Properties>
+                    <AmmoUser>
+                        <magazineSize>60</magazineSize>
+                        <reloadTime>4.9</reloadTime>
+                        <ammoSet>AmmoSet_762x35mmCharged</ammoSet>
+                    </AmmoUser>
+                    <FireModes>
+                        <aiAimMode>AimedShot</aiAimMode>
+                        <aiUseBurstMode>True</aiUseBurstMode>
+                        <aimedBurstShotCount>3</aimedBurstShotCount>
+                    </FireModes>
+                    <weaponTags>
+                        <li>CE_AI_Rifle</li>
+                        <li>CE_AI_AssaultWeapon</li>
+                    </weaponTags>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

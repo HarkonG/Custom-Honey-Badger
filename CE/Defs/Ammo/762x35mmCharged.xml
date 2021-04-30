@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Ammo762x35mmCharged</defName>
+    <label>7.62x35mm Charged</label>
+    <parent>AmmoAdvanced</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+  </ThingCategoryDef>
+
+  <!-- ==================== AmmoSet ========================== -->
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_762x35mmCharged</defName>
+    <label>7.62x35mm Charged</label>
+    <ammoTypes>
+      <Ammo_762x35mmCharged>Bullet_762x35mmCharged</Ammo_762x35mmCharged>
+      <Ammo_762x35mmCharged_AP>Bullet_762x35mmCharged_AP</Ammo_762x35mmCharged_AP>
+      <Ammo_762x35mmCharged_Ion>Bullet_762x35mmCharged_Ion</Ammo_762x35mmCharged_Ion>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Ammo ========================== -->
+  <ThingDef Class="CombatExtended.AmmoDef" Name="762x35mmChargedBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+    <description>Charged shot ammo used by advanced assault rifle designs.</description>
+    <statBases>
+      <Mass>0.01</Mass>
+      <Bulk>0.01</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_FabricationBench</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Ammo762x35mmCharged</li>
+    </thingCategories>
+    <stackLimit>5000</stackLimit>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="762x35mmChargedBase">
+    <defName>Ammo_762x35mmCharged</defName>
+    <label>7.62x35mm Charged cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.7</MarketValue>
+    </statBases>
+    <ammoClass>Charged</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="762x35mmChargedBase">
+    <defName>Ammo_762x35mmCharged_AP</defName>
+    <label>7.62x35mm Charged cartridge (Conc.)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Concentrated</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.7</MarketValue>
+    </statBases>
+    <ammoClass>ChargedAP</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="762x35mmChargedBase">
+    <defName>Ammo_762x35mmCharged_Ion</defName>
+    <label>7.62x35mm Charged cartridge (Ion)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Ion</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.7</MarketValue>
+    </statBases>
+    <ammoClass>Ionized</ammoClass>
+    <generateAllowChance>0</generateAllowChance>
+  </ThingDef>
+
+  <!-- ================== Projectiles ================== -->
+  <ThingDef Class="CombatExtended.AmmoDef" Name="Base762x35mmChargedBullet" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Bullet</damageDef>
+      <speed>160</speed>
+    </projectile>
+    <thingClass>CombatExtended.BulletCE</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+    <defName>Bullet_762x35mmCharged</defName>
+    <label>7.62x35mm Charged bullet</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>15</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>Bomb_Secondary</def>
+          <amount>5</amount>
+        </li>
+      </secondaryDamage>
+      <armorPenetrationSharp>14</armorPenetrationSharp>
+      <armorPenetrationBlunt>27.6</armorPenetrationBlunt>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+    <defName>Bullet_762x35mmCharged_AP</defName>
+    <label>7.62x35mm Charged bullet (Conc.)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>12</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>Bomb_Secondary</def>
+          <amount>3</amount>
+        </li>
+      </secondaryDamage>
+      <armorPenetrationSharp>26</armorPenetrationSharp>
+      <armorPenetrationBlunt>27.6</armorPenetrationBlunt>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+    <defName>Bullet_762x35mmCharged_Ion</defName>
+    <label>7.62x35mm Charged bullet (Ion)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>12</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>EMP</def>
+          <amount>7</amount>
+        </li>
+      </secondaryDamage>
+      <armorPenetrationSharp>20</armorPenetrationSharp>
+      <armorPenetrationBlunt>27.6</armorPenetrationBlunt>
+      <empShieldBreakChance>0.2</empShieldBreakChance>
+    </projectile>
+  </ThingDef>
+
+  <!-- ==================== Recipes ========================== -->
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_762x35mmCharged</defName>
+    <label>make 7.62x35mm Charged cartridge x500</label>
+    <description>Craft 500 7.62x35mm Charged cartridges.</description>
+    <jobString>Making 7.62x35mm Charged cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_762x35mmCharged>500</Ammo_762x35mmCharged>
+    </products>
+    <workAmount>8600</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_762x35mmCharged_AP</defName>
+    <label>make 7.62x35mm Charged (Conc.) cartridge x500</label>
+    <description>Craft 500 7.62x35mm Charged (Conc.) cartridges.</description>
+    <jobString>Making 7.62x35mm Charged (Conc.) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_762x35mmCharged_AP>500</Ammo_762x35mmCharged_AP>
+    </products>
+    <workAmount>8600</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_762x35mmCharged_Ion</defName>
+    <label>make 7.62x35mm Charged (Ion) cartridge x500</label>
+    <description>Craft 500 7.62x35mm Charged (Ion) cartridges.</description>
+    <jobString>Making 7.62x35mm Charged (Ion) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_762x35mmCharged_Ion>500</Ammo_762x35mmCharged_Ion>
+    </products>
+    <workAmount>8600</workAmount>
+  </RecipeDef>
+
+</Defs>
