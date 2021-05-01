@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Gun Nut - ACC Honey Badger</name>
+	<name>Gun Nut - AAC Honey Badger</name>
 	<author>Harkon</author>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2412382876</url>
-	<packageId>Harkon.GunNut.ACCHoneyBadger</packageId>
+	<packageId>Harkon.GunNut.AACHoneyBadger</packageId>
 	<supportedVersions>
 		<li>1.2</li>
 	</supportedVersions>
 	<description>
-	Welcome to Gun Nut - ACC Honey Badger!
+	Welcome to Gun Nut - AAC Honey Badger!
 	</description>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
