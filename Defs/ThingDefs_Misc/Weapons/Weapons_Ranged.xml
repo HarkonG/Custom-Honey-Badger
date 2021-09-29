@@ -19,7 +19,7 @@
   </ThingDef>
 
   <!--===== Honey Badger =====-->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="HRK_GunNut_BaseHumanMakeableGun">
     <defName>HRK_HoneyBadger</defName>
     <label>AAC Honey Badger</label>
     <description>The AAC Honey Badger PDW is an integrally suppressed personal defense weapon based on the AR-15. It is chambered in .300 AAC Blackout and was produced by Advanced Armament Corporation.</description>
@@ -83,10 +83,7 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <thingCategories Inherit="False">
-      <li>GunNut</li>
-    </thingCategories>
-    <weaponTags Inherit="False">
+    <weaponTags>
       <li>IndustrialGunAdvanced</li>
     </weaponTags>
     <equippedStatOffsets>
@@ -95,7 +92,7 @@
   </ThingDef>
 
   <!--===== Honey Badger (Custom) =====-->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="HRK_GunNut_BaseHumanMakeableGun">
     <defName>HRK_HoneyBadger_C</defName>
     <label>AAC Honey Badger (custom)</label>
     <description>The AAC Honey Badger PDW is an integrally suppressed personal defense weapon based on the AR-15. It is chambered in .300 AAC Blackout and was produced by Advanced Armament Corporation.</description>
@@ -108,7 +105,7 @@
       <recipeUsers>
         <li>TableMachining</li>
       </recipeUsers>
-      <researchPrerequisite>GN_Research</researchPrerequisite>
+      <researchPrerequisite>HRK_Research_GunNut</researchPrerequisite>
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -159,16 +156,9 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <thingCategories Inherit="False">
-      <li>GunNut</li>
-    </thingCategories>
     <weaponTags>
       <li>IndustrialGunAdvanced</li>
     </weaponTags>
-    <thingSetMakerTags Inherit="False">
-      <li>RewardStandardMidFreq</li>
-      <li>RewardStandardQualitySuper</li>
-    </thingSetMakerTags>
     <equippedStatOffsets>
       <HuntingStealth>0.15</HuntingStealth>
     </equippedStatOffsets>
@@ -191,7 +181,7 @@
   </ThingDef>
 
   <!--===== Honey Badger (Charged) =====-->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="HRK_GunNut_BaseHumanMakeableGun">
     <defName>HRK_HoneyBadger_S</defName>
     <label>AAC Honey Badger (charged)</label>
     <description>The Charged Honey Badger uses pulse-charge technology which charges each shot with unstable energy as it leaves the barrel. Released on impact, the charged energy greatly increases the damage done.</description>
@@ -256,16 +246,9 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <thingCategories Inherit="False">
-      <li>GunNut</li>
-    </thingCategories>
     <weaponTags>
       <li>SpacerGun</li>
     </weaponTags>
-    <thingSetMakerTags>
-      <li>RewardStandardMidFreq</li>
-      <li>RewardStandardQualitySuper</li>
-    </thingSetMakerTags>
   </ThingDef>
 
 </Defs>
