@@ -77,7 +77,7 @@
   </ThingDef>
 
   <!-- ================== Projectiles ================== -->
-  <ThingDef Class="CombatExtended.AmmoDef" Name="Base762x35mmChargedBullet" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Name="Base762x35mmChargedBullet" ParentName="BaseBullet" Abstract="true">
     <graphicData>
       <texPath>Things/Projectile/Charge_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -86,10 +86,9 @@
       <damageDef>Bullet</damageDef>
       <speed>160</speed>
     </projectile>
-    <thingClass>CombatExtended.BulletCE</thingClass>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+  <ThingDef ParentName="Base762x35mmChargedBullet">
     <defName>Bullet_762x35mmCharged</defName>
     <label>7.62x35mm Charged bullet</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
@@ -105,7 +104,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+  <ThingDef ParentName="Base762x35mmChargedBullet">
     <defName>Bullet_762x35mmCharged_AP</defName>
     <label>7.62x35mm Charged bullet (Conc.)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
@@ -121,7 +120,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base762x35mmChargedBullet">
+  <ThingDef ParentName="Base762x35mmChargedBullet">
     <defName>Bullet_762x35mmCharged_Ion</defName>
     <label>7.62x35mm Charged bullet (Ion)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
