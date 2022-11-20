@@ -162,7 +162,7 @@
                 <Properties>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>True</hasStandardCommand>
-                    <defaultProjectile>Bullet_762x35mmCharged</defaultProjectile>
+                    <defaultProjectile>Bullet_8x35mmCharged</defaultProjectile>
                     <burstShotCount>6</burstShotCount>
                     <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
                     <warmupTime>1.25</warmupTime>
@@ -173,9 +173,9 @@
                     <recoilAmount>1.18</recoilAmount>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>60</magazineSize>
+                    <magazineSize>45</magazineSize>
                     <reloadTime>4.9</reloadTime>
-                    <ammoSet>AmmoSet_762x35mmCharged</ammoSet>
+                    <ammoSet>AmmoSet_8x35mmCharged</ammoSet>
                 </AmmoUser>
                 <FireModes>
                     <aiAimMode>AimedShot</aiAimMode>
